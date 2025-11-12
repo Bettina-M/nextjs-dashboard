@@ -5,6 +5,7 @@ import { CustomerField } from '@/app/lib/definitions';
 import Link from 'next/link';
 import { createInvoice, State } from '@/app/lib/actions';
 
+
 import {
   CheckIcon,
   ClockIcon,
@@ -15,7 +16,7 @@ import { Button } from '@/app/ui/button';
 
 
 export default function Form({ customers }: { customers: CustomerField[] }) {
-  const initialState: State = { message: '', errors: {} };
+  const initialState: State = { message: null, errors: {} };
   const [state, formAction] = useActionState(createInvoice, initialState);
   return (
     <form action={formAction}>
