@@ -1,8 +1,9 @@
 'use client';
+
 import { useActionState } from 'react';
 import { CustomerField } from '@/app/lib/definitions';
 import Link from 'next/link';
-import { createInvoice } from '@/app/lib/actions';
+import { createInvoice, State } from '@/app/lib/actions';
 
 import {
   CheckIcon,
@@ -12,12 +13,6 @@ import {
 } from '@heroicons/react/24/outline';
 import { Button } from '@/app/ui/button';
 
-type State = {
-  message: string;
-  errors: {
-    [key: string]: string[] | undefined;
-  };
-};
 
 export default function Form({ customers }: { customers: CustomerField[] }) {
   const initialState: State = { message: '', errors: {} };
